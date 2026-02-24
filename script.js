@@ -1,6 +1,6 @@
 //retrieving elements
 const jobCards = document.querySelectorAll(".jobCard");
-const totalCount = document.querySelector(".total-count");
+const totalCount = document.querySelectorAll(".total-count");
 const interviewCount = document.querySelector(".interview-count");
 const rejectedCount = document.querySelector(".rejected-count");
 const emptyState = document.getElementById("emptyState");
@@ -20,7 +20,9 @@ function updateCounts() {
     const interview = document.querySelectorAll(".jobCard.interview").length;
     const rejected = document.querySelectorAll(".jobCard.rejected").length;
 
-    totalCount.innerText = total;
+    for(let i=0; i<totalCount.length;i++){
+        totalCount[i].innerText=total;
+    }
     interviewCount.innerText = interview;
     rejectedCount.innerText = rejected;
 }
