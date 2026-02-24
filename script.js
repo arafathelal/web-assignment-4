@@ -98,7 +98,7 @@ for (let i = 0; i < jobCards.length; i++) {
             interviewBtn.classList.remove("bg-green-600", "text-white");
 
             badge.innerText = "NOT APPLIED";
-            badge.className ="statusBadge bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
+            badge.className = "statusBadge bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
 
         } else {
 
@@ -107,7 +107,7 @@ for (let i = 0; i < jobCards.length; i++) {
             rejectBtn.classList.remove("bg-red-600", "text-white");
 
             badge.innerText = "INTERVIEW";
-            badge.className ="statusBadge bg-green-100 text-green-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
+            badge.className = "statusBadge bg-green-100 text-green-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
         }
 
         showTab(currentTab);
@@ -124,7 +124,7 @@ for (let i = 0; i < jobCards.length; i++) {
             rejectBtn.classList.remove("bg-red-600", "text-white");
 
             badge.innerText = "NOT APPLIED";
-            badge.className ="statusBadge bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
+            badge.className = "statusBadge bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
 
         } else {
 
@@ -136,6 +136,11 @@ for (let i = 0; i < jobCards.length; i++) {
             badge.className = "statusBadge bg-red-100 text-red-700 px-3 py-1 rounded-md text-sm inline-block mt-2";
         }
 
+        showTab(currentTab);
+    }
+//delete button
+    deleteBtn.onclick = function () {
+        card.remove();
         showTab(currentTab);
     }
 }
