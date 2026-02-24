@@ -20,8 +20,8 @@ function updateCounts() {
     const interview = document.querySelectorAll(".jobCard.interview").length;
     const rejected = document.querySelectorAll(".jobCard.rejected").length;
 
-    for(let i=0; i<totalCount.length;i++){
-        totalCount[i].innerText=total;
+    for (let i = 0; i < totalCount.length; i++) {
+        totalCount[i].innerText = total;
     }
     interviewCount.innerText = interview;
     rejectedCount.innerText = rejected;
@@ -64,14 +64,34 @@ function showTab(tab) {
 
 allBtn.onclick = function () {
     showTab("all");
+    intBtn.classList.remove("bg-blue-500", "text-white");
+    rejBtn.classList.remove("bg-blue-500", "text-white");
+    intBtn.classList.add("bg-white", "text-gray-700");
+    rejBtn.classList.add("bg-white", "text-gray-700");
+    allBtn.classList.remove("bg-white", "text-gray-700");
+    allBtn.classList.add("bg-blue-500", "text-white");
 };
 
 intBtn.onclick = function () {
     showTab("interview");
+    intBtn.classList.remove("bg-white", "text-gray-700");
+    rejBtn.classList.add("bg-white", "text-gray-700");
+    allBtn.classList.add("bg-white", "text-gray-700");
+    intBtn.classList.add("bg-blue-500", "text-white");
+    allBtn.classList.remove("bg-blue-500", "text-white");
+    rejBtn.classList.remove("bg-blue-500", "text-white");
+
+    console.log("int btn clicked")
 };
 
 rejBtn.onclick = function () {
     showTab("rejected");
+    allBtn.classList.remove("bg-blue-500", "text-white");
+    intBtn.classList.remove("bg-blue-500", "text-white");
+    allBtn.classList.add("bg-white", "text-gray-700");
+    intBtn.classList.add("bg-white", "text-gray-700");
+    rejBtn.classList.remove("bg-white", "text-gray-700");
+    rejBtn.classList.add("bg-blue-500", "text-white");
 };
 
 updateCounts();
@@ -140,7 +160,7 @@ for (let i = 0; i < jobCards.length; i++) {
 
         showTab(currentTab);
     }
-//delete button
+    //delete button
     deleteBtn.onclick = function () {
         card.remove();
         showTab(currentTab);
